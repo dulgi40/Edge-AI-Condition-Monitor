@@ -65,6 +65,7 @@ uint8_t pData[6];
 volatile int16_t x_axis = 0;
 volatile int16_t y_axis = 0;
 volatile int16_t z_axis = 0;
+volatile int8_t flag_dma = 0;
 
 /* USER CODE END 0 */
 
@@ -99,6 +100,9 @@ int main(void)
   MX_DMA_Init();
   MX_I2C1_Init();
   /* USER CODE BEGIN 2 */
+  if(HAL_I2C_Mem_Read_DMA(&hi2c1, vib_addr, 0x3B, 1, pData, 6) != HAL_OK){
+	  Error_Handler();
+  }
 
   /* USER CODE END 2 */
 
@@ -106,14 +110,14 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  if(HAL_I2C_Mem_Read(&hi2c1, vib_addr, 0x3B, 1, pData, 6,100) != HAL_OK){
-		  Error_Handler();
+	  if(flag_dma == 1){
+		  x_axis = (int16_t)(pData[0] << 8) | pData[1];
+		  y_axis = (int16_t)(pData[2] << 8) | pData[3];
+		  z_axis = (int16_t)(pData[4] << 8) | pData[5];
+		  flag_dma = 0;
 	  }
 
-	  x_axis = (int16_t)(pData[0] << 8) | pData[1];
-	  y_axis = (int16_t)(pData[2] << 8) | pData[3];
-	  z_axis = (int16_t)(pData[4] << 8) | pData[5];
-	  HAL_Delay(10);
+	  HAL_Delay(1);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -186,7 +190,8 @@ static void MX_I2C1_Init(void)
     Error_Handler();
   }
   /* USER CODE BEGIN I2C1_Init 2 */
-
+  __HAL_LINKDMA(&hi2c1, hdmarx, hdma_i2c1_rx);
+  __HAL_LINKDMA(&hi2c1, hdmatx, hdma_i2c1_tx);
   /* USER CODE END I2C1_Init 2 */
 
 }
@@ -202,10 +207,10 @@ static void MX_DMA_Init(void)
 
   /* DMA interrupt init */
   /* DMA1_Channel6_IRQn interrupt configuration */
-  HAL_NVIC_SetPriority(DMA1_Channel6_IRQn, 0, 0);
+  HAL_NVIC_SetPriority(DMA1_Channel6_IRQn, 1, 0);
   HAL_NVIC_EnableIRQ(DMA1_Channel6_IRQn);
   /* DMA1_Channel7_IRQn interrupt configuration */
-  HAL_NVIC_SetPriority(DMA1_Channel7_IRQn, 0, 0);
+  HAL_NVIC_SetPriority(DMA1_Channel7_IRQn, 1, 0);
   HAL_NVIC_EnableIRQ(DMA1_Channel7_IRQn);
 
 }
@@ -231,6 +236,22 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
+void HAL_I2C_MemRxCpltCallback(I2C_HandleTypeDef *hi2c)
+{
+  /* Prevent unused argument(s) compilation warning */
+	if (hi2c->Instance == I2C1){
+		flag_dma = 1;
+
+		if(HAL_I2C_Mem_Read_DMA(&hi2c1, vib_addr, 0x3B, 1, pData, 6) != HAL_OK){
+			  Error_Handler();
+		  }
+	}
+	//if (flag_dma == 0) flag_dma = 1;
+
+  /* NOTE : This function should not be modified, when the callback is needed,
+            the HAL_I2C_MemRxCpltCallback could be implemented in the user file
+   */
+}
 
 /* USER CODE END 4 */
 
