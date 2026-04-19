@@ -1,5 +1,5 @@
 clear;
-testdata = readtable("GymbalData\abnormal_test.csv");
+testdata = readtable("GimbalData\abnormal_test.csv");
 
 
 testdata = testdata(:,4:5);

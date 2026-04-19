@@ -1,6 +1,6 @@
 clear;
-normal = readtable("C:\Users\vayne\OneDrive\Desktop\GymbalData\normal.csv");
-abnormal = readtable("C:\Users\vayne\OneDrive\Desktop\GymbalData\abnormal.csv");
+normal = readtable("GimbalData\normal.csv");
+abnormal = readtable("GimbalData\abnormal.csv");
 
 
 

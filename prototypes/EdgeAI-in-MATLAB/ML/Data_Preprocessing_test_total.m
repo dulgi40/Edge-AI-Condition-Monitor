@@ -1,6 +1,6 @@
 clear;
-normal = readtable("GymbalData\normal_test.csv");
-abnormal = readtable("GymbalData\abnormal_test.csv");
+normal = readtable("GimbalData\normal_test.csv");
+abnormal = readtable("GimbalData\abnormal_test.csv");
 
 normal = normal(:,4:5);
 abnormal = abnormal(:,4:5);
