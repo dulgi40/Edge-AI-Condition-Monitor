@@ -1,0 +1,11 @@
+
+normal = readtable("C:\Users\vayne\OneDrive\Desktop\GymbalData\normal.csv");
+abnormal = readtable("C:\Users\vayne\OneDrive\Desktop\GymbalData\abnormal.csv");
+
+
+
+
+normal = normal(:,2:5);
+abnormal = abnormal(:,2:5);
+
+normal(

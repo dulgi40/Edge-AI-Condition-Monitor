@@ -61,7 +61,7 @@ main-build: stm32-f103-I2C-test.elf secondary-outputs
 
 # Tool invocations
 stm32-f103-I2C-test.elf stm32-f103-I2C-test.map: $(OBJS) $(USER_OBJS) C:\Users\vayne\workspace\Edge-AI-Condition-Monitor\prototypes\stm32-f103-I2C-test\STM32F103CBTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "stm32-f103-I2C-test.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"C:\Users\vayne\workspace\Edge-AI-Condition-Monitor\prototypes\stm32-f103-I2C-test\STM32F103CBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="stm32-f103-I2C-test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+	arm-none-eabi-gcc -o "stm32-f103-I2C-test.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"C:\Users\vayne\workspace\Edge-AI-Condition-Monitor\prototypes\stm32-f103-I2C-test\STM32F103CBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="stm32-f103-I2C-test.map" -Wl,--gc-sections -static -L"C:\Users\vayne\workspace\Edge-AI-Condition-Monitor\prototypes\stm32-f103-I2C-test\Drivers\CMSIS\Lib\ARM" -L"C:\Users\vayne\workspace\Edge-AI-Condition-Monitor\prototypes\stm32-f103-I2C-test\Drivers\CMSIS\Lib\ARM" --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
