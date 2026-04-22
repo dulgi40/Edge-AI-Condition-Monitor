@@ -1,0 +1,7 @@
+C:/Users/vayne/workspace/IHM03_Default/P-IHM03-Potentiometer/Src/mc_tasks_foc.c:509:13:FOC_Clear	16	static
+C:/Users/vayne/workspace/IHM03_Default/P-IHM03-Potentiometer/Src/mc_tasks_foc.c:117:13:FOC_Init	40	static
+C:/Users/vayne/workspace/IHM03_Default/P-IHM03-Potentiometer/Src/mc_tasks_foc.c:187:6:TSK_MF_StopProcessing	8	static
+C:/Users/vayne/workspace/IHM03_Default/P-IHM03-Potentiometer/Src/mc_tasks_foc.c:543:13:FOC_InitAdditionalMethods	0	static
+C:/Users/vayne/workspace/IHM03_Default/P-IHM03-Potentiometer/Src/mc_tasks_foc.c:566:13:FOC_CalcCurrRef	24	static,ignoring_inline_asm
+C:/Users/vayne/workspace/IHM03_Default/P-IHM03-Potentiometer/Src/mc_tasks_foc.c:206:13:TSK_MediumFrequencyTaskM1	32	static
+C:/Users/vayne/workspace/IHM03_Default/P-IHM03-Potentiometer/Src/mc_tasks_foc.c:621:16:FOC_HighFrequencyTask	64	static

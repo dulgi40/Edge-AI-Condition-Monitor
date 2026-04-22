@@ -1,0 +1,10 @@
+C:/Users/vayne/workspace/IHM03_Default/P-IHM03-Potentiometer/Src/stm32g4xx_hal_msp.c:68:6:HAL_MspInit	16	static
+C:/Users/vayne/workspace/IHM03_Default/P-IHM03-Potentiometer/Src/stm32g4xx_hal_msp.c:99:6:HAL_ADC_MspInit	128	static
+C:/Users/vayne/workspace/IHM03_Default/P-IHM03-Potentiometer/Src/stm32g4xx_hal_msp.c:209:6:HAL_ADC_MspDeInit	8	static
+C:/Users/vayne/workspace/IHM03_Default/P-IHM03-Potentiometer/Src/stm32g4xx_hal_msp.c:291:6:HAL_CORDIC_MspInit	8	static
+C:/Users/vayne/workspace/IHM03_Default/P-IHM03-Potentiometer/Src/stm32g4xx_hal_msp.c:314:6:HAL_CORDIC_MspDeInit	0	static
+C:/Users/vayne/workspace/IHM03_Default/P-IHM03-Potentiometer/Src/stm32g4xx_hal_msp.c:336:6:HAL_TIM_PWM_MspInit	40	static
+C:/Users/vayne/workspace/IHM03_Default/P-IHM03-Potentiometer/Src/stm32g4xx_hal_msp.c:366:6:HAL_TIM_MspPostInit	40	static
+C:/Users/vayne/workspace/IHM03_Default/P-IHM03-Potentiometer/Src/stm32g4xx_hal_msp.c:400:6:HAL_TIM_PWM_MspDeInit	8	static
+C:/Users/vayne/workspace/IHM03_Default/P-IHM03-Potentiometer/Src/stm32g4xx_hal_msp.c:434:6:HAL_UART_MspInit	112	static
+C:/Users/vayne/workspace/IHM03_Default/P-IHM03-Potentiometer/Src/stm32g4xx_hal_msp.c:517:6:HAL_UART_MspDeInit	8	static

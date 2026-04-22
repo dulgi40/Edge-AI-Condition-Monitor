@@ -1,0 +1,4 @@
+C:/Users/vayne/workspace/IHM03_Default/P-IHM03-Potentiometer/Src/stm32_mc_common_it.c:70:6:USART2_IRQHandler	14
+C:/Users/vayne/workspace/IHM03_Default/P-IHM03-Potentiometer/Src/stm32_mc_common_it.c:148:6:HardFault_Handler	1
+C:/Users/vayne/workspace/IHM03_Default/P-IHM03-Potentiometer/Src/stm32_mc_common_it.c:167:6:SysTick_Handler	3
+C:/Users/vayne/workspace/IHM03_Default/P-IHM03-Potentiometer/Src/stm32_mc_common_it.c:213:6:EXTI15_10_IRQHandler	2
